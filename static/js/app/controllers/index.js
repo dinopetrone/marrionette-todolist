@@ -3,12 +3,9 @@ define(function( require, exports, module ){
         vent = require('../vent');
 
     var Controller = Marionette.Controller.extend({
-        initialize: function() {
-
-        },
         setFilter : function(param) {
           param = param || '';
-          vent.trigger('auctionitem:change', param.trim() || '');
+          vent.trigger('filter:change', param.trim() || '');
         }
     });
 

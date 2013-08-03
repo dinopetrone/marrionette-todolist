@@ -10,11 +10,13 @@ define(function( require ){
 
 
     var app = new Marionette.Application({vent:vent});
+    
     var todos = new Todos();
+    todos.fetch()
 
-    app.listenTo(todos, 'all', function(){
-
-    })
+    app.listenTo(vent, 'filter:change', function(filter){
+        app.main.$el.attr('class', 'filter-' + filter);
+    });
 
     app.addRegions({
         header: '#header',

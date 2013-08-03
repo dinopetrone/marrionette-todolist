@@ -6,9 +6,13 @@ define(function( require, exports, module ){
             completed:false
         },
         initialize: function() {
-            
+            this.listenTo(this, 'change', this.onChange)
         },
-
+        onChange : function(){
+            if(this.get('title') == ''){
+                this.destroy()
+            }
+        }
     });
 
     exports = module.exports = function( opts ){

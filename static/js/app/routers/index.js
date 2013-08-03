@@ -5,7 +5,6 @@ define(function (require, exports, module) {
         appRoutes:{
             '*filter':'setFilter'
         }
-        
     });
 
     exports = module.exports = function (opts) {
