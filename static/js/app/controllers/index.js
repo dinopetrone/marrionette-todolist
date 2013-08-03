@@ -1,6 +1,6 @@
 define(function( require, exports, module ){
     var Marionette = require('marionette'),
-        app = require('../app');
+        vent = require('../vent');
 
     var Controller = Marionette.Controller.extend({
         initialize: function() {
@@ -8,7 +8,7 @@ define(function( require, exports, module ){
         },
         setFilter : function(param) {
           param = param || '';
-          app.vent.trigger('auctionitem:change', param.trim() || '');
+          vent.trigger('auctionitem:change', param.trim() || '');
         }
     });
 

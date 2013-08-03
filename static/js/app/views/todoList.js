@@ -7,20 +7,6 @@ define(function (require, exports, module) {
         template : template,
         itemView : TodoItem,
         itemViewContainer : '#todo-list',
-        initialize : function(){
-            
-        },
-        ui : {
-
-        },
-        events : {
-
-        },
-        onRender : function(){
-
-        },
-        
-
     });
     exports = module.exports = function (opts) {
         return new TodoList(opts);

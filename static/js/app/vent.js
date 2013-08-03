@@ -1,3 +1,3 @@
-define(['backbone.wreqr'],function(Wreqr){
-  return new Wreqr.EventAggregator();
+define(['marionette'],function(Marionette){
+    return new Backbone.Wreqr.EventAggregator();
 })

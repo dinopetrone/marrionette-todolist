@@ -6,8 +6,11 @@ define(function (require, exports, module) {
     var TodoItem = Marionette.ItemView.extend({
         template : template,
         events : {
-            
+            'click .destroy' : 'destroy'
         },
+        destroy : function(){
+            this.model.destroy()
+        }
     });
     exports = module.exports = function (opts) {
         return new TodoItem(opts);

@@ -13,7 +13,6 @@ requirejs.config({
 		'modernizr': { exports: 'Modernizr' },
 		'marionette' : { deps : ['backbone'], exports : 'Backbone.Marionette'},
 		'backbone.localStorage' : { deps : ['backbone'], exports : 'Backbone.Marionette'},
-		'backbone.wreqr' : { deps : ['backbone'], exports : 'Backbone.Marionette'},
 	},
 	//re-route libs to top-level
 	paths: {

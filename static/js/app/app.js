@@ -1,15 +1,18 @@
 define(function( require ){
-    var $ = require('jquery'),
-    Marionette = require('marionette'),
+    var Marionette = require('marionette')
     Todos = require('./collections/todos'),
     Header = require('./views/header').Header,
     Footer = require('./views/footer').Footer,
-    TodoList = require('./views/todoList').TodoList;
+    TodoList = require('./views/todoList').TodoList,
+    Router = require('./routers/index').Router,
+    Controller = require('./controllers/index').Controller,
+    vent = require('./vent');
 
-    var app = new Marionette.Application();
+
+    var app = new Marionette.Application({vent:vent});
     var todos = new Todos();
 
-    app.listenTo(todos, 'all ', function(){
+    app.listenTo(todos, 'all', function(){
 
     })
 
@@ -20,14 +23,17 @@ define(function( require ){
     })
 
     app.addInitializer(function(){
-        
+        new Router({
+            controller: new Controller()
+        })
+        Backbone.history.start()
     })
 
     var options = {
         collection:todos
     }
 
-
+    
     app.header.show(new Header(options))
     app.main.show(new TodoList(options))
     app.footer.show(new Footer(options))
