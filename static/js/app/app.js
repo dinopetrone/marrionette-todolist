@@ -10,6 +10,12 @@ define(function( require ){
 
 
     var app = new Marionette.Application({vent:vent});
+
+    app.addRegions({
+        header: '#header',
+        main: '#main',
+        footer: '#footer'
+    })
     
     var todos = new Todos();
     todos.fetch()
@@ -18,11 +24,7 @@ define(function( require ){
         app.main.$el.attr('class', 'filter-' + filter);
     });
 
-    app.addRegions({
-        header: '#header',
-        main: '#main',
-        footer: '#footer'
-    })
+    
 
     app.addInitializer(function(){
         new Router({

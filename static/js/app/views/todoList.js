@@ -21,9 +21,9 @@ define(function (require, exports, module) {
         },
         checkToggleVisible : function(){
             if(this.collection.length){
-                this.ui.toggleAll.show()
+                this.$el.show()
             }else{
-                this.ui.toggleAll.hide()
+                this.$el.hide()
             }
         },
         onToggleAll : function(evt){

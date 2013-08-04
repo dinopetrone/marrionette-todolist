@@ -1,6 +1,10 @@
-<div class="view <% if (completed) { %>completed<% }%>">
-    <input class="toggle" type="checkbox" <% if (completed) { %>checked<% } %>>
-    <label><%= title %></label>
-    <input class="edit" value="<%= title %>">
-    <button class="btn btn-danger destroy">delete</button>
+<div class="row">
+    <div class="col-5">
+        <input class="toggle" type="checkbox" <% if (completed) { %>checked<% } %>>
+        <label><%= title %></label>
+        <input class="edit" value="<%= title %>">
+    </div>
+    <div class="col-1">
+        <button class="btn btn-danger destroy">delete</button>
+    </div>
 </div>
