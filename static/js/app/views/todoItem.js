@@ -16,11 +16,18 @@ define(function (require, exports, module) {
             'click label' : 'onLabelClick',
             'keypress .edit' : 'onEditKeypress',
             'click .toggle' : 'onToggle',
-            'blur .edit' : 'toggleEditView'
+            'blur .edit' : 'onEditLoseFocus',
         },
         initialize : function(){
             this.listenTo(this.model, 'change', this.render, this)
             this.listenTo(vent, 'todos:clear:completed', this.onClearCompleted)
+        },
+        onEditLoseFocus : function(evt){
+            this.toggleEditView()
+            this.saveModel(evt)
+        },
+        saveModel : function(evt){
+            this.model.save('title', evt.target.value)
         },
         onRender: function(){
             this.ui.edit.hide()
